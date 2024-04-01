@@ -113,6 +113,13 @@ function getPasswordOptions()
   // Boolean value for including uppercase characters
   var includeUpperCasedCharacters = confirm('Include uppercase characters?');
 
+  // Any one character type is should be selected
+  if (!includeSpecialCharacters && !includeNumericCharacters && !includeLowerCasedCharacters && !includeUpperCasedCharacters)
+  {
+    alert('At least one character type should be selected.');
+    return;
+  }
+
   // Object to store user input
   var passwordOptions = {
     length: length,
