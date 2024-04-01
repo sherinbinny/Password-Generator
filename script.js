@@ -101,6 +101,19 @@ function getPasswordOptions()
     return;
   }
 
+  // Boolean value for including special characters
+  var includeSpecialCharacters = confirm('Include special characters?');
+
+
+
+  // Object to store user input
+  var passwordOptions = {
+    length: length,
+    includeSpecialCharacters: includeSpecialCharacters
+  };
+
+  return passwordOptions;
+
 }
 
 // Function for getting a random element from an array
