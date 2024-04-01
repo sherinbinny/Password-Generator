@@ -89,7 +89,17 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
-function getPasswordOptions() {
+function getPasswordOptions()
+{
+  // Variable to store length of password from user input
+  var length = parseInt(prompt('Enter the length of your password (minimum 8, maximum 128):'));
+
+  // Check whether length is a number and within the specified range
+  if (isNaN(length) || length < 8 || length > 128)
+  {
+    alert('Password length must be a number between 8 and 128 characters.');
+    return;
+  }
 
 }
 
@@ -99,8 +109,9 @@ function getRandom(arr) {
 }
 
 // Function to generate password with user input
-function generatePassword() {
-
+function generatePassword()
+{
+  var options = getPasswordOptions();
 }
 
 // Get references to the #generate element
