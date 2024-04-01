@@ -107,12 +107,19 @@ function getPasswordOptions()
   // Boolean value for including numeric characters
   var includeNumericCharacters = confirm('Include numeric characters?');
 
+  // Boolean value for including lowercase characters
+  var includeLowerCasedCharacters = confirm('Include lowercase characters?');
+
+  // Boolean value for including uppercase characters
+  var includeUpperCasedCharacters = confirm('Include uppercase characters?');
 
   // Object to store user input
   var passwordOptions = {
     length: length,
     includeSpecialCharacters: includeSpecialCharacters,
-    includeNumericCharacters: includeNumericCharacters
+    includeNumericCharacters: includeNumericCharacters,
+    includeLowerCasedCharacters: includeLowerCasedCharacters,
+    includeUpperCasedCharacters: includeUpperCasedCharacters
   };
 
   return passwordOptions;
