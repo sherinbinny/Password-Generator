@@ -156,41 +156,54 @@ function generatePassword()
   var requiredCharacters = [];
 
 
-  // Add characters to arrays based on user input
-  if (options.includeSpecialCharacters) {
+  // Add characters to declared arrays based on user input
+  if(options.includeSpecialCharacters)
+  {
     optionalCharacters = optionalCharacters.concat(specialCharacters);
     requiredCharacters.push(getRandom(specialCharacters));
   }
-  if (options.includeNumericCharacters) {
+
+  if(options.includeNumericCharacters)
+  {
     optionalCharacters = optionalCharacters.concat(numericCharacters);
     requiredCharacters.push(getRandom(numericCharacters));
   }
-  if (options.includeLowerCasedCharacters) {
+
+  if(options.includeLowerCasedCharacters)
+  {
     optionalCharacters = optionalCharacters.concat(lowerCasedCharacters);
     requiredCharacters.push(getRandom(lowerCasedCharacters));
   }
-  if (options.includeUpperCasedCharacters) {
+
+  if(options.includeUpperCasedCharacters)
+  {
     optionalCharacters = optionalCharacters.concat(upperCasedCharacters);
     requiredCharacters.push(getRandom(upperCasedCharacters));
   }
 
 
-  // Form password from user input
-  for (var i = 0; i < options.length; i++) {
+  // Form a password from user input
+  for(var i = 0; i < options.length; i++)
+  {
     var possibleCharacter = getRandom(optionalCharacters);
     resultant_password += possibleCharacter;
   }
 
+  // Atleast one of each required characters should be in password
+  for (var i = 0; i < requiredCharacters.length; i++)
+  {
+    resultant_password[i] = requiredCharacters[i];
+  }
 
-
-  return resultant_password
+  return resultant_password;
 }
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-function writePassword() {
+function writePassword()
+{
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
