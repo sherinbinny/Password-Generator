@@ -104,12 +104,15 @@ function getPasswordOptions()
   // Boolean value for including special characters
   var includeSpecialCharacters = confirm('Include special characters?');
 
+  // Boolean value for including numeric characters
+  var includeNumericCharacters = confirm('Include numeric characters?');
 
 
   // Object to store user input
   var passwordOptions = {
     length: length,
-    includeSpecialCharacters: includeSpecialCharacters
+    includeSpecialCharacters: includeSpecialCharacters,
+    includeNumericCharacters: includeNumericCharacters
   };
 
   return passwordOptions;
