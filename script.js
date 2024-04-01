@@ -142,6 +142,33 @@ function getRandom(arr) {
 function generatePassword()
 {
   var options = getPasswordOptions();
+
+  // Variable for password 
+  var resultant_password = '';
+
+  // Types of characters that can be included in password stored in this array
+  var optionalCharacters = [];
+
+  // Types of characters that must be included in password stored in this array
+  var requiredCharacters = [];
+
+
+  if (options.includeSpecialCharacters) {
+    optionalCharacters = optionalCharacters.concat(specialCharacters);
+    requiredCharacters.push(getRandom(specialCharacters));
+  }
+  if (options.includeNumericCharacters) {
+    optionalCharacters = optionalCharacters.concat(numericCharacters);
+    requiredCharacters.push(getRandom(numericCharacters));
+  }
+  if (options.includeLowerCasedCharacters) {
+    optionalCharacters = optionalCharacters.concat(lowerCasedCharacters);
+    requiredCharacters.push(getRandom(lowerCasedCharacters));
+  }
+  if (options.includeUpperCasedCharacters) {
+    optionalCharacters = optionalCharacters.concat(upperCasedCharacters);
+    requiredCharacters.push(getRandom(upperCasedCharacters));
+  }
 }
 
 // Get references to the #generate element
